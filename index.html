@@ -320,7 +320,7 @@
   </div>
 
   <script>
-    const API_KEY = '12fa404c5f145a75b2867eee15bbab13';
+    const API_KEY = '733a412dddc3dc47ac83c22aa679552e';
     const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
     const input = document.getElementById('cityInput');
@@ -355,10 +355,9 @@
       show(loadingEl);
 
       try {
-        const apiUrl = `${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}`;
-        const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`);
-        const json = await res.json();
-        const data = JSON.parse(json.contents);
+        
+        const res = await fetch(`${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}`);
+        const data = await res.json();
 
         hide(loadingEl);
 
